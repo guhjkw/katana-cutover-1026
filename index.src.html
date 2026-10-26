@@ -220,6 +220,13 @@ footer{padding:36px 0 50px;color:var(--faint);font-size:13.5px;text-align:center
   table{font-size:12.5px}
   .hide-m{display:none}
 }
+@media (max-width:760px){
+  .tablewrap{max-height:none;overflow:visible;border:0;background:transparent}
+  .tablewrap table,.tablewrap tbody,.tablewrap tr,.tablewrap td{display:block;width:100%}
+  .tablewrap thead{display:none}
+  .tablewrap tr{background:#fff;border:1px solid var(--a-line);border-radius:12px;margin-bottom:10px;padding:10px 12px}
+  .tablewrap td{border:0;padding:4px 0}
+}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
