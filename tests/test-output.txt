@@ -1,0 +1,88 @@
+
+1. Data check: bad rows are skipped and reported, never a crash
+  PASS sample data loads with no problems
+  PASS an item with no SKU is skipped
+  PASS an item with an unknown type is skipped
+  PASS an exact duplicate SKU is skipped
+  PASS a duplicate order number is skipped
+  PASS an order from an unknown channel is skipped
+  PASS a fractional quantity is refused and the empty order skipped
+  PASS a recipe for an item that does not exist is skipped
+  PASS a missing "today" falls back and says so
+
+2. SKU clean-up rule
+  PASS "BB-1Oil", "bb-1oil" and " BB-1OIL " all clean to BB-1OIL
+  PASS "BBQ SAUCE 12" and "BBQ_SAUCE-12" both clean to BBQ-SAUCE-12
+  PASS edit distance SMSALT-4OZ to SM-SALT-4OZ is 1
+
+3. The item audit
+  PASS 27 active items (the inactive 2024 gift box is left out)
+  PASS 21 of 27 ready (78%)
+  PASS BBQ-SAUCE-12 and BBQ_SAUCE-12 are flagged as look-alikes
+  PASS HONEY-12 has no unit, PEPPER-JAM-9 no recipe, GIFT-BOX-6 a missing ingredient (LABEL-GOLD)
+  PASS GIFT-BOX-3 is blocked only because the BBQ sauce in its recipe is not ready (knock-on)
+  PASS 4 root problems behind 6 blocked items
+  PASS a missing cost is a warning, not a blocker (RUB-STEAK-5 stays ready)
+  PASS items under their reorder point are noted (MAPLE-8OZ, MAPLE-BULK)
+
+4. Matching order lines the way Katana would
+  PASS 15 lines on 8 open orders
+  PASS 5 lines fail an exact match today
+  PASS the clean-up rule rescues 2 of them on its own (bb-1oil, MAPLE-8oz)
+  PASS 3 need a decision: a look-alike and 2 unknown SKUs
+  PASS "BBQ SAUCE 12" is ambiguous between the two BBQ items
+  PASS SMSALT-4OZ gets a "did you mean SM-SALT-4OZ" suggestion
+  PASS CHILI-OIL-250 is too far from everything to guess
+  PASS an exact SKU still wins over the clean-up rule (BBQ_SAUCE-12 is the case pack)
+
+5. Routing every order at the switch
+  PASS all 8 open orders are blocked before any fix
+  PASS the shipped order stays in history and the packed one finishes in SOS
+  PASS shipped and packed orders list no import reasons
+  PASS 2 open orders already invoiced in QuickBooks are guarded against double billing
+  PASS blocked order value is $1,704
+
+6. Fixes, one at a time
+  PASS renaming the case pack clears the look-alike
+  PASS the old SKU is kept as an alias, so Derby Day's BBQ_SAUCE-12 still means the case pack
+  PASS the case-pack recipe follows the rename
+  PASS GIFT-BOX-3 becomes ready with it (the knock-on clears)
+  PASS "BBQ SAUCE 12" now resolves to the single BBQ sauce
+  PASS M-77105 now moves as already invoiced
+  PASS a rename to a messy SKU is refused with the clean form
+  PASS a rename that looks like another item is refused with a reason
+  PASS a unit outside the list is refused
+  PASS setting HONEY-12 to "ea" readies it
+  PASS the pepper jam recipe comes in from the recipe sheet
+  PASS a recipe the sheet does not have is refused
+  PASS dropping LABEL-GOLD from the Grand Gift Box readies it
+  PASS accepting the suggestion maps SMSALT-4OZ
+  PASS mapping to an item that does not exist is refused
+  PASS after 6 fixes all 8 open orders move: 6 to Katana, 2 marked already invoiced
+  PASS the fix log records each step
+
+7. Adding an order
+  PASS a missing retailer, a bad channel and a zero quantity are all refused
+  PASS a new Faire order gets the next F- number
+  PASS its messy SKU "Sm-Salt 4oz" resolves through the clean-up rule
+  PASS it routes to Katana (the item is ready)
+
+8. The dated plan
+  PASS default switch is Mon 9 Nov, 10 business days away
+  PASS 9 dated tasks from Mon 2 Nov to Tue 17 Nov
+  PASS the freeze lands 2 business days before the switch (Thu 5 Nov)
+  PASS the first task names the root problems
+  PASS a Saturday switch is refused
+  PASS Thanksgiving is refused as a holiday
+  PASS a switch this week is refused as too soon (earliest Mon 2 Nov)
+  PASS business days skip Thanksgiving and the Friday after
+  PASS 8 preparation days move the earliest switch to Thu 5 Nov
+  PASS so a Wed 4 Nov switch is refused and Mon 9 Nov still works
+  PASS a freeze longer than the preparation window is refused
+
+9. Exports
+  PASS plan CSV has a header and 9 tasks
+  PASS fields with commas are quoted
+  PASS issues CSV lists every active item problem
+
+68 checks: 68 passed, 0 failed

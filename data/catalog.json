@@ -1,0 +1,708 @@
+{
+  "_note": "Invented wholesale food brand for a demo. Every item, recipe, retailer, order and invoice number is made up.",
+  "company": {
+    "name": "Copper Barrel Provisions",
+    "short": "Copper Barrel",
+    "today": "2026-10-26",
+    "channels": [
+      "Faire",
+      "MarketTime"
+    ],
+    "from": "Syncware → QuickBooks Online → SOS Inventory",
+    "to": "Syncware → Katana → QuickBooks Online + ShipStation"
+  },
+  "rules": {
+    "prepDays": 5,
+    "freezeDays": 2,
+    "parallelDays": 5,
+    "defaultCutover": "2026-11-09",
+    "uoms": [
+      "ea",
+      "case",
+      "L",
+      "kg"
+    ],
+    "holidays": [
+      "2026-11-26",
+      "2026-11-27",
+      "2026-12-25"
+    ]
+  },
+  "items": [
+    {
+      "sku": "BB-1OIL",
+      "name": "Bourbon Barrel Smoked Olive Oil 250ml",
+      "type": "finished",
+      "uom": "ea",
+      "onHand": 140,
+      "reorderPoint": 60,
+      "cost": 6.4,
+      "active": true
+    },
+    {
+      "sku": "SB-1OIL",
+      "name": "Smoked Bourbon Chili Oil 250ml",
+      "type": "finished",
+      "uom": "ea",
+      "onHand": 85,
+      "reorderPoint": 50,
+      "cost": 5.9,
+      "active": true
+    },
+    {
+      "sku": "BBQ-SAUCE-12",
+      "name": "Bourbon BBQ Sauce 12oz",
+      "type": "finished",
+      "uom": "ea",
+      "onHand": 210,
+      "reorderPoint": 100,
+      "cost": 3.1,
+      "active": true
+    },
+    {
+      "sku": "BBQ_SAUCE-12",
+      "name": "Bourbon BBQ Sauce 12oz, case of 12",
+      "type": "finished",
+      "uom": "case",
+      "onHand": 14,
+      "reorderPoint": 10,
+      "cost": 37.2,
+      "active": true
+    },
+    {
+      "sku": "MAPLE-8OZ",
+      "name": "Bourbon Barrel Maple Syrup 8oz",
+      "type": "finished",
+      "uom": "ea",
+      "onHand": 64,
+      "reorderPoint": 80,
+      "cost": 7.8,
+      "active": true
+    },
+    {
+      "sku": "SM-SALT-4OZ",
+      "name": "Bourbon Smoked Sea Salt 4oz",
+      "type": "finished",
+      "uom": "ea",
+      "onHand": 120,
+      "reorderPoint": 60,
+      "cost": 2.2,
+      "active": true
+    },
+    {
+      "sku": "GIFT-BOX-3",
+      "name": "Trio Gift Box",
+      "type": "finished",
+      "uom": "ea",
+      "onHand": 40,
+      "reorderPoint": 25,
+      "cost": 14.5,
+      "active": true
+    },
+    {
+      "sku": "Gift-Box-3",
+      "name": "Trio Gift Box (2024 version)",
+      "type": "finished",
+      "uom": "ea",
+      "onHand": 0,
+      "reorderPoint": 0,
+      "cost": 13.9,
+      "active": false
+    },
+    {
+      "sku": "GIFT-BOX-6",
+      "name": "Grand Gift Box",
+      "type": "finished",
+      "uom": "ea",
+      "onHand": 12,
+      "reorderPoint": 10,
+      "cost": 31.0,
+      "active": true
+    },
+    {
+      "sku": "PEPPER-JAM-9",
+      "name": "Bourbon Pepper Jam 9oz",
+      "type": "finished",
+      "uom": "ea",
+      "onHand": 52,
+      "reorderPoint": 40,
+      "cost": 3.6,
+      "active": true
+    },
+    {
+      "sku": "HONEY-12",
+      "name": "Bourbon Barrel Honey 12oz",
+      "type": "finished",
+      "uom": "",
+      "onHand": 30,
+      "reorderPoint": 30,
+      "cost": 5.1,
+      "active": true
+    },
+    {
+      "sku": "RUB-STEAK-5",
+      "name": "Bourbon Steak Rub 5oz",
+      "type": "finished",
+      "uom": "ea",
+      "onHand": 75,
+      "reorderPoint": 40,
+      "cost": null,
+      "active": true
+    },
+    {
+      "sku": "OIL-OLIVE-BULK",
+      "name": "Olive oil, bulk",
+      "type": "raw",
+      "uom": "L",
+      "onHand": 220,
+      "reorderPoint": 100,
+      "cost": 4.1,
+      "active": true
+    },
+    {
+      "sku": "OIL-CHILI-BULK",
+      "name": "Chili oil base, bulk",
+      "type": "raw",
+      "uom": "L",
+      "onHand": 60,
+      "reorderPoint": 40,
+      "cost": 4.8,
+      "active": true
+    },
+    {
+      "sku": "BOURBON-BULK",
+      "name": "Bourbon, bulk",
+      "type": "raw",
+      "uom": "L",
+      "onHand": 95,
+      "reorderPoint": 50,
+      "cost": 18.0,
+      "active": true
+    },
+    {
+      "sku": "SAUCE-BASE",
+      "name": "BBQ sauce base",
+      "type": "raw",
+      "uom": "kg",
+      "onHand": 140,
+      "reorderPoint": 80,
+      "cost": 2.4,
+      "active": true
+    },
+    {
+      "sku": "MAPLE-BULK",
+      "name": "Maple syrup, bulk",
+      "type": "raw",
+      "uom": "L",
+      "onHand": 35,
+      "reorderPoint": 40,
+      "cost": 9.5,
+      "active": true
+    },
+    {
+      "sku": "SALT-SEA",
+      "name": "Sea salt",
+      "type": "raw",
+      "uom": "kg",
+      "onHand": 48,
+      "reorderPoint": 20,
+      "cost": 1.8,
+      "active": true
+    },
+    {
+      "sku": "HONEY-BULK",
+      "name": "Honey, bulk",
+      "type": "raw",
+      "uom": "kg",
+      "onHand": 22,
+      "reorderPoint": 15,
+      "cost": 7.2,
+      "active": true
+    },
+    {
+      "sku": "PEPPER-MASH",
+      "name": "Red pepper mash",
+      "type": "raw",
+      "uom": "kg",
+      "onHand": 18,
+      "reorderPoint": 10,
+      "cost": 5.6,
+      "active": true
+    },
+    {
+      "sku": "SPICE-STEAK",
+      "name": "Steak spice blend",
+      "type": "raw",
+      "uom": "kg",
+      "onHand": 12,
+      "reorderPoint": 5,
+      "cost": 6.3,
+      "active": true
+    },
+    {
+      "sku": "BOTTLE-250",
+      "name": "Glass bottle 250ml",
+      "type": "raw",
+      "uom": "ea",
+      "onHand": 900,
+      "reorderPoint": 400,
+      "cost": 0.62,
+      "active": true
+    },
+    {
+      "sku": "JAR-12OZ",
+      "name": "Glass jar 12oz",
+      "type": "raw",
+      "uom": "ea",
+      "onHand": 640,
+      "reorderPoint": 300,
+      "cost": 0.48,
+      "active": true
+    },
+    {
+      "sku": "JAR-9OZ",
+      "name": "Glass jar 9oz",
+      "type": "raw",
+      "uom": "ea",
+      "onHand": 300,
+      "reorderPoint": 150,
+      "cost": 0.4,
+      "active": true
+    },
+    {
+      "sku": "TIN-4OZ",
+      "name": "Tin 4oz",
+      "type": "raw",
+      "uom": "ea",
+      "onHand": 300,
+      "reorderPoint": 200,
+      "cost": 0.35,
+      "active": true
+    },
+    {
+      "sku": "BOX-KRAFT-3",
+      "name": "Kraft gift box, 3 slots",
+      "type": "raw",
+      "uom": "ea",
+      "onHand": 70,
+      "reorderPoint": 50,
+      "cost": 1.4,
+      "active": true
+    },
+    {
+      "sku": "BOX-KRAFT-6",
+      "name": "Kraft gift box, 6 slots",
+      "type": "raw",
+      "uom": "ea",
+      "onHand": 25,
+      "reorderPoint": 20,
+      "cost": 2.1,
+      "active": true
+    },
+    {
+      "sku": "LABEL-STD",
+      "name": "Standard label",
+      "type": "raw",
+      "uom": "ea",
+      "onHand": 4000,
+      "reorderPoint": 1500,
+      "cost": 0.05,
+      "active": true
+    }
+  ],
+  "recipes": {
+    "BB-1OIL": [
+      {
+        "sku": "OIL-OLIVE-BULK",
+        "qty": 0.25
+      },
+      {
+        "sku": "BOURBON-BULK",
+        "qty": 0.01
+      },
+      {
+        "sku": "BOTTLE-250",
+        "qty": 1
+      },
+      {
+        "sku": "LABEL-STD",
+        "qty": 1
+      }
+    ],
+    "SB-1OIL": [
+      {
+        "sku": "OIL-CHILI-BULK",
+        "qty": 0.25
+      },
+      {
+        "sku": "BOURBON-BULK",
+        "qty": 0.01
+      },
+      {
+        "sku": "BOTTLE-250",
+        "qty": 1
+      },
+      {
+        "sku": "LABEL-STD",
+        "qty": 1
+      }
+    ],
+    "BBQ-SAUCE-12": [
+      {
+        "sku": "SAUCE-BASE",
+        "qty": 0.34
+      },
+      {
+        "sku": "BOURBON-BULK",
+        "qty": 0.02
+      },
+      {
+        "sku": "JAR-12OZ",
+        "qty": 1
+      },
+      {
+        "sku": "LABEL-STD",
+        "qty": 1
+      }
+    ],
+    "BBQ_SAUCE-12": [
+      {
+        "sku": "BBQ-SAUCE-12",
+        "qty": 12
+      }
+    ],
+    "MAPLE-8OZ": [
+      {
+        "sku": "MAPLE-BULK",
+        "qty": 0.24
+      },
+      {
+        "sku": "BOURBON-BULK",
+        "qty": 0.005
+      },
+      {
+        "sku": "BOTTLE-250",
+        "qty": 1
+      },
+      {
+        "sku": "LABEL-STD",
+        "qty": 1
+      }
+    ],
+    "SM-SALT-4OZ": [
+      {
+        "sku": "SALT-SEA",
+        "qty": 0.11
+      },
+      {
+        "sku": "BOURBON-BULK",
+        "qty": 0.003
+      },
+      {
+        "sku": "TIN-4OZ",
+        "qty": 1
+      },
+      {
+        "sku": "LABEL-STD",
+        "qty": 1
+      }
+    ],
+    "GIFT-BOX-3": [
+      {
+        "sku": "BB-1OIL",
+        "qty": 1
+      },
+      {
+        "sku": "BBQ-SAUCE-12",
+        "qty": 1
+      },
+      {
+        "sku": "SM-SALT-4OZ",
+        "qty": 1
+      },
+      {
+        "sku": "BOX-KRAFT-3",
+        "qty": 1
+      }
+    ],
+    "GIFT-BOX-6": [
+      {
+        "sku": "BB-1OIL",
+        "qty": 1
+      },
+      {
+        "sku": "SB-1OIL",
+        "qty": 1
+      },
+      {
+        "sku": "BBQ-SAUCE-12",
+        "qty": 1
+      },
+      {
+        "sku": "MAPLE-8OZ",
+        "qty": 1
+      },
+      {
+        "sku": "SM-SALT-4OZ",
+        "qty": 1
+      },
+      {
+        "sku": "HONEY-12",
+        "qty": 1
+      },
+      {
+        "sku": "BOX-KRAFT-6",
+        "qty": 1
+      },
+      {
+        "sku": "LABEL-GOLD",
+        "qty": 1
+      }
+    ],
+    "HONEY-12": [
+      {
+        "sku": "HONEY-BULK",
+        "qty": 0.34
+      },
+      {
+        "sku": "BOURBON-BULK",
+        "qty": 0.01
+      },
+      {
+        "sku": "JAR-12OZ",
+        "qty": 1
+      },
+      {
+        "sku": "LABEL-STD",
+        "qty": 1
+      }
+    ],
+    "RUB-STEAK-5": [
+      {
+        "sku": "SPICE-STEAK",
+        "qty": 0.14
+      },
+      {
+        "sku": "TIN-4OZ",
+        "qty": 1
+      },
+      {
+        "sku": "LABEL-STD",
+        "qty": 1
+      }
+    ]
+  },
+  "orders": [
+    {
+      "id": "F-30412",
+      "channel": "Faire",
+      "retailer": "Cedar & Sage",
+      "date": "2026-10-15",
+      "status": "shipped",
+      "qboInvoice": "INV-2219",
+      "lines": [
+        {
+          "sku": "BBQ-SAUCE-12",
+          "qty": 12,
+          "price": 6.5
+        }
+      ]
+    },
+    {
+      "id": "F-30418",
+      "channel": "Faire",
+      "retailer": "Juniper & Salt Mercantile",
+      "date": "2026-10-19",
+      "status": "packed",
+      "qboInvoice": "INV-2231",
+      "lines": [
+        {
+          "sku": "BB-1Oil",
+          "qty": 12,
+          "price": 12.0
+        },
+        {
+          "sku": "SM-SALT-4oz",
+          "qty": 12,
+          "price": 4.5
+        }
+      ]
+    },
+    {
+      "id": "F-30422",
+      "channel": "Faire",
+      "retailer": "The Copper Kettle Market",
+      "date": "2026-10-21",
+      "status": "open",
+      "qboInvoice": null,
+      "lines": [
+        {
+          "sku": "GIFT-BOX-3",
+          "qty": 6,
+          "price": 29.0
+        },
+        {
+          "sku": "MAPLE-8OZ",
+          "qty": 12,
+          "price": 14.0
+        }
+      ]
+    },
+    {
+      "id": "M-77105",
+      "channel": "MarketTime",
+      "retailer": "Bluegrass Gift Co.",
+      "date": "2026-10-21",
+      "status": "open",
+      "qboInvoice": "INV-2236",
+      "lines": [
+        {
+          "sku": "BBQ SAUCE 12",
+          "qty": 24,
+          "price": 6.5
+        },
+        {
+          "sku": "RUB-STEAK-5",
+          "qty": 12,
+          "price": 7.0
+        }
+      ]
+    },
+    {
+      "id": "F-30431",
+      "channel": "Faire",
+      "retailer": "Hearth & Home Provisions",
+      "date": "2026-10-22",
+      "status": "open",
+      "qboInvoice": null,
+      "lines": [
+        {
+          "sku": "SB-1OIL",
+          "qty": 12,
+          "price": 11.5
+        },
+        {
+          "sku": "PEPPER-JAM-9",
+          "qty": 6,
+          "price": 7.5
+        }
+      ]
+    },
+    {
+      "id": "M-77112",
+      "channel": "MarketTime",
+      "retailer": "Riverbend Wine & Cheese",
+      "date": "2026-10-23",
+      "status": "open",
+      "qboInvoice": "INV-2240",
+      "lines": [
+        {
+          "sku": "HONEY-12",
+          "qty": 12,
+          "price": 10.0
+        },
+        {
+          "sku": "BB-1OIL",
+          "qty": 6,
+          "price": 12.0
+        }
+      ]
+    },
+    {
+      "id": "F-30440",
+      "channel": "Faire",
+      "retailer": "Oak Street General",
+      "date": "2026-10-23",
+      "status": "open",
+      "qboInvoice": null,
+      "lines": [
+        {
+          "sku": "bb-1oil",
+          "qty": 6,
+          "price": 12.0
+        },
+        {
+          "sku": "GIFT-BOX-6",
+          "qty": 2,
+          "price": 62.0
+        }
+      ]
+    },
+    {
+      "id": "M-77119",
+      "channel": "MarketTime",
+      "retailer": "Lexington Pantry",
+      "date": "2026-10-24",
+      "status": "open",
+      "qboInvoice": null,
+      "lines": [
+        {
+          "sku": "MAPLE-8oz",
+          "qty": 12,
+          "price": 14.0
+        },
+        {
+          "sku": "SMSALT-4OZ",
+          "qty": 12,
+          "price": 4.5
+        }
+      ]
+    },
+    {
+      "id": "F-30447",
+      "channel": "Faire",
+      "retailer": "Magnolia Market Hall",
+      "date": "2026-10-25",
+      "status": "open",
+      "qboInvoice": null,
+      "lines": [
+        {
+          "sku": "GIFT-BOX-3",
+          "qty": 4,
+          "price": 29.0
+        }
+      ]
+    },
+    {
+      "id": "M-77126",
+      "channel": "MarketTime",
+      "retailer": "Derby Day Gifts",
+      "date": "2026-10-26",
+      "status": "open",
+      "qboInvoice": null,
+      "lines": [
+        {
+          "sku": "BBQ_SAUCE-12",
+          "qty": 2,
+          "price": 72.0
+        },
+        {
+          "sku": "CHILI-OIL-250",
+          "qty": 6,
+          "price": 11.5
+        }
+      ]
+    }
+  ],
+  "recipeSheet": {
+    "_note": "Recipes kept in a spreadsheet that never made it into SOS.",
+    "PEPPER-JAM-9": [
+      {
+        "sku": "PEPPER-MASH",
+        "qty": 0.2
+      },
+      {
+        "sku": "BOURBON-BULK",
+        "qty": 0.01
+      },
+      {
+        "sku": "JAR-9OZ",
+        "qty": 1
+      },
+      {
+        "sku": "LABEL-STD",
+        "qty": 1
+      }
+    ]
+  }
+}
